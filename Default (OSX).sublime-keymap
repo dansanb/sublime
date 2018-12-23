@@ -1,0 +1,111 @@
+[
+	// *******************************************************************************
+	// General operations
+	// *******************************************************************************
+	
+	// gutter line numebes - show / hide
+	{ "keys": ["super+shift+\\"], "command": "toggle_setting", "args": { "setting": "gutter"} },
+	
+	// project sidebar - show / hide
+	{ "keys": ["super+1"], "command": "toggle_side_bar" },
+
+	// make home, end and shift modifiers work correctly
+	{ "keys": ["home"], "command": "move_to", "args": {"to": "bol"} },
+	{ "keys": ["end"], "command": "move_to", "args": {"to": "eol"} },
+	{ "keys": ["shift+end"], "command": "move_to", "args": {"to": "eol", "extend": true} },
+	{ "keys": ["shift+home"], "command": "move_to", "args": {"to": "bol", "extend": true } },
+
+	// make paste and indent the default paste behavior
+	{ "keys": ["super+v"], "command": "paste_and_indent" },	
+
+
+
+
+
+
+	// *******************************************************************************
+	// file operations
+	// *******************************************************************************
+	
+	// new file
+	{ "keys": ["n", "n", "n"], "command": "advanced_new_file_new"},
+
+	// move file
+	{ "keys": ["n", "n", "m"], "command": "advanced_new_file_move"},
+	
+	// delete file (specify location)
+	{ "keys": ["n", "n", "d"], "command": "advanced_new_file_delete", "args": {"current":false } },
+
+	// delete current file
+	{ "keys": ["n", "n" , "x"], "command": "advanced_new_file_delete", "args": {"current":true } },
+
+
+
+
+	
+
+	// *******************************************************************************
+	// line operations - all require ctrl+super key
+	// *******************************************************************************
+	
+	// move line up
+	{ "keys": ["ctrl+super+up"], "command": "swap_line_up" },
+
+	// move line down
+	{ "keys": ["ctrl+super+down"], "command": "swap_line_down" },
+
+	// indent line
+	{ "keys": ["ctrl+super+]"], "command": "indent" },	
+	{ "keys": ["ctrl+super+right"], "command": "indent" },
+
+	// unindent line
+	{ "keys": ["ctrl+super+["], "command": "unindent" },
+	{ "keys": ["ctrl+super+left"], "command": "unindent" },
+
+	// join selected lines into single line
+	{ "keys": ["ctrl+super+j"], "command": "join_lines" },
+
+	// duplicate line
+	// note - osx uses this command system-wide for dictionary look up, and there is no option to disable.
+	// run this in terminal to disable: 
+	// 		defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+	{ "keys": ["ctrl+super+d"], "command": "duplicate_line" },
+	
+	// delete line	
+	{ "keys": ["ctrl+super+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["ctrl+super+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+
+	// select line
+	{ "keys": ["ctrl+super+l"], "command": "expand_selection", "args": {"to": "line"} },
+
+	// delete to start of line
+	{ "keys": ["ctrl+super+home"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },	
+	
+	// delete to end of line
+	{ "keys": ["ctrl+super+end"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+
+
+
+
+
+
+
+
+
+	// *******************************************************************************
+	// word operations
+	// *******************************************************************************
+	
+	// select
+	{ "keys": ["super+d"], "command": "find_under_expand" },
+
+	// select all words matching
+	{ "keys": ["super+shift+d"], "command": "find_all_under" },
+
+	// delete until the start of the word
+	{ "keys": ["super+home"], "command": "delete_word", "args": { "forward": false, "sub_words": true } },
+
+	// delete until the end of the word
+	{ "keys": ["super+end"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },	
+
+]
