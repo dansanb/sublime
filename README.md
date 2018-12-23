@@ -1,1 +1,1 @@
-# Daniel's Sublime 3 Configuration
+# Daniel's Sublime Text 3 Configuration
